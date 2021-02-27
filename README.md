@@ -73,8 +73,8 @@ About this app:
 34. Provide your credentials to login, such as your email and password provided while registering.
 35. If you provide correct credentials, you will be logged in as a staff or patient respectively.
 36. If you are logged in as a patient, You will see a welcome page with Hello {user} and there will be a book appointment button. Click on Book appointment button and you will be redirected on a book appointment page.
-37. On this page, you can check availability for your appointment date and time. 
-38. You have to choose an appointment date and time only which is available to be booked. You cannot book your appointment which is already booked. Ensure you must not provide appointment date beyond today else you might face error.
+37. On this page, you can check availability for your appointment date and time slots. 
+38. You have to choose an appointment date and time slot, only which is available to be booked. You cannot book your appointment which is already booked. Ensure you must not provide appointment date beyond today else you might face error.
 39. Once the choosen appointment date and time is available, there will be a button visible to Book Appointment.
 40. Click on Book appointment.
 41. Once you click on book appointment. It will take you to the confirmation page, where you will check you all details, such as email, name , mobile, appointment date, appointment time, etc. If you click on confirm, your appointment will be fixed and you can receive an email or sms , if required. Else if you deny, you can cofirm it later.
@@ -96,6 +96,7 @@ Tools and packages used for this app:
 
 frontend -> HTML, CSS, JavaScript, Bootstrap, React
 backend -> Python, Django, Django REST Framework
+api-testing -> Postman
 databse -> Sqlite
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
