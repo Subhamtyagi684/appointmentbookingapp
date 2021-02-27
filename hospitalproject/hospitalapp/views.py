@@ -56,10 +56,14 @@ class Checkavailability(APIView):
 
     def get(self, request,date, time):
         #2 refers to error, 1 refers to you can book appointment, 0 refers to not available
+        #datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]])
         try:
+            time_interval = time.split('-')
+            start_time_str = time_interval[0]
+            start_time_time = datetime.strptime(start_time_str,'%I:%M%p').time()
             new_date= datetime.strptime(date,'%Y-%m-%d').date()
             today = datetime.today()
-            if (new_date.year==today.year) and (new_date.month>=today.month):
+            if (new_date.year==today.year) and (new_date.month>=today.month)  and (start_time_time.hour>=today.hour):
                 no_of_days = [i for i in range(1,int(calendar.monthrange(2012,new_date.month)[1]))]
                 if (new_date.month==today.month)  and (new_date.day>=today.day):
                     pass
