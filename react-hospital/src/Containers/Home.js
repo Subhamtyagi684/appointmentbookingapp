@@ -72,7 +72,7 @@ class Home extends Component{
                                     {data.patient_apt_time}
                                 </td>
                                 <td>
-                                    {this.state.visited?<p className='text-success'><strong>Visited</strong></p>:<button className='btn btn-success' type='button' onClick={()=>{this.handleVisitedButton(data.pk)}}>Click me if the patient visited</button>}
+                                    {data.visited?<p className='text-success'><strong>Visited</strong></p>:<button className='btn btn-success' type='button' onClick={()=>{this.handleVisitedButton(data.pk)}}>Click me if the patient visited</button>}
                                 </td>
                             </tr>
                         </Fragment>
