@@ -63,9 +63,14 @@ class Checkavailability(APIView):
             start_time_time = datetime.strptime(start_time_str,'%I:%M%p').time()
             new_date= datetime.strptime(date,'%Y-%m-%d').date()
             today = datetime.today()
-            if (new_date.year==today.year) and (new_date.month>=today.month)  and (start_time_time.hour>=today.hour):
+            if (new_date.year==today.year) and (new_date.month>=today.month)  :
                 no_of_days = [i for i in range(1,int(calendar.monthrange(2012,new_date.month)[1]))]
-                if (new_date.month==today.month)  and (new_date.day>=today.day):
+                if (new_date.month==today.month)  and (new_date.day==today.day):
+                    if (start_time_time.hour>=today.hour):
+                        pass
+                    else:
+                        return Response({'available':2},status=HTTP_400_BAD_REQUEST)
+                elif (new_date.month==today.month)  and (new_date.day>today.day):
                     pass
                 elif (new_date.month>today.month)  and (new_date.day in no_of_days) :
                     pass
